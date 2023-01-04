@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from "react";
+import "./App.css";
+import Question from "./components/Question"; // Question component
+import SubmittedAnswers from "./components/SubmittedAnswers";
+import { Context, Provider } from "./Context";
 
+const title: string = "LivAstro Assignment";
+
+function Main() {
+  const { submitted } = useContext<any>(Context);
+  if (submitted)
+    return (
+      <main>
+        <SubmittedAnswers />
+      </main>
+    );
+  else
+    return (
+      <main>
+        <Question />
+      </main>
+    );
+}
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header">{title}</header>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <div className="Content">
+        <Provider>
+          <Main></Main>
+        </Provider>
+      </div>
     </div>
   );
 }
