@@ -120,3 +120,20 @@
   font-weight: 600;
   font-size: 18px;
 }
+
+@media only screen and (max-width: 600px) {
+  .Card {
+    width: calc(100vw - 30px);
+  }
+  .DateContainer {
+    display: flex;
+    width: calc(100vw - 50px);
+  }
+  .Date {
+    border: #333 solid 1px;
+    border-radius: 5px;
+    flex-grow: 1;
+    height: 30px;
+    margin: 5px;
+  }
+}
