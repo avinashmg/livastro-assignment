@@ -7,7 +7,7 @@ const Checkbox = () => {
     const options = questions[index].questionoption;
     const questionid = questions[index].questionid;
     const answer_selected = answer[questionid];
-    const checks = {};
+    const checks: { [x: string]: boolean } = {};
     const respond = (value: string, checked: boolean) => {
       let _answer = answer;
       checks[value] = checked;
